@@ -15,7 +15,7 @@ const downvote = async (channel, ts) => {
 
 
 slackEvents.on('message', async event => {
-    if (event.text.match(/(?:cln.sh)|(?:zootopia)/gi) && !event.text.includes('sucks')) {
+    if (event.text.match(/cln.sh/gi) && !event.user == 'UE3LEM6AK') {
         await downvote(
             event.channel,
             event.ts
