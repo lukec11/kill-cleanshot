@@ -1,0 +1,19 @@
+{
+  "name": "kill-cleanshot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/lukec11/kill-cleanshot"
+  },
+  "author": "lukec11 <me@lukec.me>",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/events-api": "^2.3.3",
+    "@slack/web-api": "^5.10.0"
+  }
+}
