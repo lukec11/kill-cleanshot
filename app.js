@@ -4,6 +4,8 @@ const { WebClient } = require('@slack/web-api');
 const wc = new WebClient(process.env.SLACK_TOKEN);
 const slackEvents = createEventAdapter(process.env.SLACK_SIGNING_SECRET);
 
+const allowList = ["UE8DH0UHM", "UCWT4NQ56"];
+
 const downvote = async (channel, ts) => {
     await wc.reactions.add({
         token: process.env.USER_TOKEN,
@@ -15,7 +17,7 @@ const downvote = async (channel, ts) => {
 
 
 slackEvents.on('message', async event => {
-    if (event.text.match(/(?:cln.sh)|(?:zootopia)/gi)) {
+    if (event.text.match(/(?:cln.sh)|(?:zootopia)/gi) && !allowList.includes(event.user)) {
         await downvote(
             event.channel,
             event.ts
