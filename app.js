@@ -15,7 +15,7 @@ const downvote = async (channel, ts) => {
 
 
 slackEvents.on('message', async event => {
-    if (event.text.match(/(?:cln.sh)/gi)) {
+    if (event.text.match(/(?:cln.sh)/gi) || (event.text.match(/(?:scam)/gi)) {
         await downvote(
             event.channel,
             event.ts
